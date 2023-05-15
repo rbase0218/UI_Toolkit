@@ -20,7 +20,6 @@ public class CharacterListController
         ListEntryTemplate = listElementTemplate;
 
         CharacterList = root.Q<ListView>("character-list");
-
         CharClassLabel = root.Q<Label>("character-class");
         CharNameLabel = root.Q<Label>("character-name");
         CharPortrait = root.Q<VisualElement>("character-portrait");
@@ -28,7 +27,6 @@ public class CharacterListController
         FIllCharacterList();
 
         CharacterList.onSelectionChange += OnCharacterSelected;
-
     }
 
     private void EnumerateAllCharacters()
@@ -42,20 +40,20 @@ public class CharacterListController
         CharacterList.makeItem = () =>
         {
             var newListEntry = ListEntryTemplate.Instantiate();
-
             var newListEntryLogic = new CharacterListEntryController();
 
             newListEntry.userData = newListEntryLogic;
+            
             newListEntryLogic.SetVisualElement(newListEntry);
 
             return newListEntry;
         };
-
+        
         CharacterList.bindItem = (item, index) =>
         {
-            (item.userData as CharacterListEntryController).SetCharacterData(AllCharacters[index]);
+            (item.userData as CharacterListEntryController)?.SetCharacterData(AllCharacters[index]);
         };
-
+        
         CharacterList.fixedItemHeight = 45;
         CharacterList.itemsSource = AllCharacters;
     }
@@ -75,10 +73,6 @@ public class CharacterListController
 
         CharClassLabel.text = selectedCharacter.Class.ToString();
         CharNameLabel.text = selectedCharacter.CharacterName;
-        
+        CharPortrait.style.backgroundImage = new StyleBackground(selectedCharacter.PortraitImage);
     }
-    
-    
-    
-
 }
