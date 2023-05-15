@@ -1,7 +1,7 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <Style src="project://database/Assets/UI%20Toolkit/USS/MainView.uss?fileID=7433441132597879392&amp;guid=4b32b61fbd775a74c9d507356ce74390&amp;type=3#MainView" />
-    <ui:VisualElement class="background">
-        <ui:VisualElement style="flex-direction: row; height: 350px;">
+    <Style src="project://database/Assets/00_CharacterBoard/UI%20Toolkit/USS/MainView.uss?fileID=7433441132597879392&amp;guid=4b32b61fbd775a74c9d507356ce74390&amp;type=3#MainView" />
+    <ui:VisualElement class="background" style="flex-grow: 1; align-items: center; justify-content: center;">
+        <ui:VisualElement style="flex-direction: row; height: 454px; justify-content: flex-start; width: 720px; align-items: stretch; flex-grow: 0; flex-wrap: nowrap; opacity: 1; display: flex; visibility: visible;">
             <ui:ListView focusable="true" name="character-list" class="border" style="width: 230px; -unity-slice-right: 0; margin-right: 6px; background-color: rgb(110, 57, 37);" />
             <ui:VisualElement style="align-items: flex-end; justify-content: space-between;">
                 <ui:VisualElement class="border" style="align-items: center; justify-content: center; width: 276px; padding-left: 8px; padding-right: 8px; padding-top: 8px; padding-bottom: 8px; background-color: rgb(170, 89, 57);">
